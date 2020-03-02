@@ -35,7 +35,7 @@
                 </v-list-item>
                 <v-list-item >
                     <v-list-item-icon>
-                        <v-switch v-model="switch1" ></v-switch>
+                        <v-switch v-model="switch1" value="red"></v-switch>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Dark Mode</v-list-item-title>
@@ -115,10 +115,11 @@
                 info: window.Laravel.routes.username,
                 logout: window.Laravel.routes.logout,
                 csrf: window.Laravel.csrfToken,
-                switch1: true
+                switch1: ''
             }
         },
         mounted(){
+            if(localStorage.switch1) this.switch1 = localStorage.switch1;
 
         },
         created(){

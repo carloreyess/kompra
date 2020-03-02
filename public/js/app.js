@@ -2656,10 +2656,12 @@ __webpack_require__.r(__webpack_exports__);
       info: window.Laravel.routes.username,
       logout: window.Laravel.routes.logout,
       csrf: window.Laravel.csrfToken,
-      switch1: true
+      switch1: ''
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    if (localStorage.switch1) this.switch1 = localStorage.switch1;
+  },
   created: function created() {
     this.$vuetify.theme.dark = this.switch1;
   },
@@ -7366,6 +7368,7 @@ var render = function() {
                     "v-list-item-icon",
                     [
                       _c("v-switch", {
+                        attrs: { value: "red" },
                         model: {
                           value: _vm.switch1,
                           callback: function($$v) {
